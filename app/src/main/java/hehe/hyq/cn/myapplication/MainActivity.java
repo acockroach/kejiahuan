@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        createAA();
+    }
+
+    private void createAA() {
+        System.out.println("呵呵呵");
     }
 
     @Override
