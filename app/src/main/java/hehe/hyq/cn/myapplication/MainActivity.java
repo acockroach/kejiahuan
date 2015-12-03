@@ -26,8 +26,14 @@ public class MainActivity extends AppCompatActivity {
         createAA();
         createCC();
         HttpUtils utils=new HttpUtils();
+        createDD();
 
     }
+
+    private void createDD() {
+        System.out.println("dddd");
+    }
+
     BaseAdapter adapter=new BaseAdapter() {
         @Override
         public int getCount() {
@@ -46,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View view=null;
+            View view;
             if(convertView==null){
                 view=View.inflate(MainActivity.this,R.layout.list_item,null);
             }else{
