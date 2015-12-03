@@ -28,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         createAA();
+        createBB();
+    }
+
+    private void createBB() {
+        System.out.println("dont BB");
     }
 
     private void createAA() {
