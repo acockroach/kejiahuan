@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void createBB() {
-        System.out.println("dont BB");
     }
 
     private void createAA() {
