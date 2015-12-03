@@ -8,6 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+
+import com.lidroid.xutils.HttpUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,39 +20,53 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        ListView listview = (ListView) findViewById(R.id.listview);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                System.out.println("别BB");
-            }
-        });
+        listview.setAdapter(adapter);
         createAA();
         createCC();
-    }
+        HttpUtils utils=new HttpUtils();
 
+    }
+    BaseAdapter adapter=new BaseAdapter() {
+        @Override
+        public int getCount() {
+            return 20;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view=null;
+            if(convertView==null){
+                view=View.inflate(MainActivity.this,R.layout.list_item,null);
+            }else{
+                view=convertView;
+            }
+            return view;
+        }
+    };
     private void createCC() {
         System.out.println("呵呵呵");
     }
 
     private void createBB() {
+        System.out.println("请问你是逗比吗");
     }
 
     private void createAA() {
         System.out.println("呵呵呵");
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
