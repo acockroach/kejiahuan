@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        System.out.println("你是谁啊，补补");
         return super.onOptionsItemSelected(item);
     }
 }
