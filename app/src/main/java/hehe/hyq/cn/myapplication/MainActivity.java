@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View view;
+            View view=null;
             if(convertView==null){
                 view=View.inflate(MainActivity.this,R.layout.list_item,null);
             }else{
@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        System.out.println("你是谁啊，补补");
         return super.onOptionsItemSelected(item);
     }
 }
